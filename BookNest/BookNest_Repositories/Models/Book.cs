@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BookNest_Service.Models;
+namespace BookNest_Repositories.Models;
 
 public partial class Book
 {

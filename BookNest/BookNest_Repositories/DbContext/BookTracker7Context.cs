@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace BookNest_Service.Models;
+namespace BookNest_Repositories.Models;
 
 public partial class BookTracker7Context : DbContext
 {
