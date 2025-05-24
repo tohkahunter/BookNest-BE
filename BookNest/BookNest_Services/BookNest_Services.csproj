@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookNest_Repositories\BookNest_Repositories.csproj" />
+  </ItemGroup>
+
 </Project>
