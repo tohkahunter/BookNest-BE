@@ -1,0 +1,6 @@
+@BookNest_BackEnd_HostAddress = http://localhost:5067
+
+GET {{BookNest_BackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
