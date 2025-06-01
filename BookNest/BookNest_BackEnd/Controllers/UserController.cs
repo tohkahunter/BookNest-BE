@@ -1,6 +1,7 @@
 ﻿using BookNest_Services.Interface;
 using BookNest_Services.Request.User;
 using BookNest_Services.Service;
+using BookNest_Repositories.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookNest_BackEnd.Controllers
@@ -14,6 +15,27 @@ namespace BookNest_BackEnd.Controllers
         {
             _userService = userService;
             _jwtService = jwtService;
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(UserRegisterRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = new User
+            {
+                Username = request.Username,
+                Email = request.Email,
+                FirstName = request.FirstName,
+                LastName = request.LastName
+            };
+
+            var result = await _userService.RegisterUserAsync(user, request.Password);
+            if (result == null)
+                return BadRequest("Email or username already exists");
+
+            return Ok(new { message = "Account created successfully" });
         }
 
         [HttpPost("login")]
