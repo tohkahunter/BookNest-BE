@@ -1,18 +1,28 @@
+using BookNest_Repositories.Interface;
+using BookNest_Repositories.Models;
+using BookNest_Repositories.Repository;
+using BookNest_Services.Interface;
+using BookNest_Services.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using BookNest_Repositories.Interface;
-using BookNest_Repositories.Repository;
-using BookNest_Services.Interface;
-using BookNest_Repositories.Models;
-using BookNest_Services.Service;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // Handle circular references
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+
+        // Optional: Configure other JSON settings
+        options.JsonSerializerOptions.WriteIndented = true;
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Keep original property names
+    });
 
 // Configure DbContext
 builder.Services.AddDbContext<BookTracker7Context>(options =>
@@ -50,6 +60,14 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<JwtService>();
+
+// Repository registrations
+builder.Services.AddScoped<IUserBooksRepository, UserBooksRepository>();
+builder.Services.AddScoped<IBookShelvesRepository, BookShelvesRepository>();
+builder.Services.AddScoped<IReadingStatusRepository, ReadingStatusRepository>();
+
+// Service registrations
+builder.Services.AddScoped<IBookShelfService, BookShelfService>();
 
 // Configure Swagger
 builder.Services.AddEndpointsApiExplorer();
