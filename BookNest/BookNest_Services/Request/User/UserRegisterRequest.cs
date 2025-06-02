@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookNest_Services.Request.User
 {
-    public class UserRegistrationModel
+    public class UserRegisterRequest
     {
         [Required]
         [StringLength(50)]

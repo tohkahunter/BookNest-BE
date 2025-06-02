@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|solutionrelative:booknest_backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_repositories\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|solutionrelative:booknest_repositories\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\utilities\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\utilities\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|solutionrelative:booknest_backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|solutionrelative:booknest_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\utilities\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\utilities\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_repositories\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|solutionrelative:booknest_repositories\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_repositories\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|solutionrelative:booknest_repositories\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\request\\user\\userregisterrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\request\\user\\userregisterrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_repositories\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|solutionrelative:booknest_repositories\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\request\\user\\userloginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\request\\user\\userloginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 376,
-          "SelectedChildIndex": 21,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,10 +106,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
@@ -127,28 +127,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\appsettings.json",
-              "RelativeDocumentMoniker": "BookNest_BackEnd\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\appsettings.json",
-              "RelativeToolTip": "BookNest_BackEnd\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-24T15:28:31.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "PasswordHasher.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Utilities\\PasswordHasher.cs",
               "RelativeDocumentMoniker": "BookNest_Services\\Utilities\\PasswordHasher.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Utilities\\PasswordHasher.cs",
               "RelativeToolTip": "BookNest_Services\\Utilities\\PasswordHasher.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAewBUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T15:11:19.709Z",
+              "WhenOpened": "2025-06-01T13:56:07.729Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BookNest_BackEnd\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAWwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T13:55:45.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BookNest_Repositories\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Models\\User.cs",
+              "RelativeToolTip": "BookNest_Repositories\\Models\\User.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAtwCsAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T14:15:12.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Repository\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "BookNest_Repositories\\Repository\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Repository\\GenericRepository.cs",
+              "RelativeToolTip": "BookNest_Repositories\\Repository\\GenericRepository.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAIAywC4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:24:20.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Request\\User\\UserRegisterRequest.cs",
+              "RelativeDocumentMoniker": "BookNest_Services\\Request\\User\\UserRegisterRequest.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Request\\User\\UserRegisterRequest.cs",
+              "RelativeToolTip": "BookNest_Services\\Request\\User\\UserRegisterRequest.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:01:49.011Z"
             },
             {
               "$type": "Document",
@@ -158,9 +196,9 @@
               "RelativeDocumentMoniker": "BookNest_Services\\Service\\UserService.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Service\\UserService.cs",
               "RelativeToolTip": "BookNest_Services\\Service\\UserService.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAMwDUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAIAywCAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T14:37:47.029Z",
+              "WhenOpened": "2025-05-27T14:19:46.656Z",
               "EditorCaption": ""
             },
             {
@@ -171,49 +209,21 @@
               "RelativeDocumentMoniker": "BookNest_Repositories\\Repository\\UserRepository.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Repository\\UserRepository.cs",
               "RelativeToolTip": "BookNest_Repositories\\Repository\\UserRepository.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAuwA4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T14:36:43.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T14:19:43.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Repository\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "BookNest_Repositories\\Repository\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Repository\\GenericRepository.cs",
-              "RelativeToolTip": "BookNest_Repositories\\Repository\\GenericRepository.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAD4vyIAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "UserLoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Request\\User\\UserLoginRequest.cs",
+              "RelativeDocumentMoniker": "BookNest_Services\\Request\\User\\UserLoginRequest.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Request\\User\\UserLoginRequest.cs",
+              "RelativeToolTip": "BookNest_Services\\Request\\User\\UserLoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T10:18:43.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Program.cs",
-              "RelativeDocumentMoniker": "BookNest_BackEnd\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Program.cs",
-              "RelativeToolTip": "BookNest_BackEnd\\Program.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T10:08:19.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\UserController.cs",
-              "RelativeToolTip": "BookNest_BackEnd\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T10:07:25.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T14:19:41.17Z"
             }
           ]
         },
