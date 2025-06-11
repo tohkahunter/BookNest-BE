@@ -263,5 +263,49 @@ namespace BookNest_Services.Service
         {
             return await _userBooksRepository.ExistsAsync(ub => ub.UserId == userId && ub.BookId == bookId);
         }
+
+        public async Task<UserBook> AddOrUpdateShelfForExistingBookAsync(int userId, int bookId, int statusId, int? shelfId)
+        {
+            // 1) upsert logic
+            var existing = await _userBooksRepository
+                .FirstOrDefaultAsync(ub => ub.UserId == userId && ub.BookId == bookId);
+
+            UserBook ub;
+            if (existing != null)
+            {
+                existing.ShelfId = shelfId;
+                existing.StatusId = statusId;
+                _userBooksRepository.Update(existing);
+                ub = existing;
+            }
+            else
+            {
+                ub = await AddBookToUserShelfAsync(userId, bookId, statusId, shelfId);
+                // AddBookToUserShelfAsync already calls AddAsync(), but doesn't load nav-props
+            }
+
+            // 2) Force-load the navigation properties so result.Book etc. are not null
+            //    We need the EF DbContext; repo might expose it via the injected context
+            await _context.Entry(ub)
+                          .Reference(x => x.Book)
+                          .Query()
+                          .Include(b => b.Author)
+                          .Include(b => b.Genre)
+                          .LoadAsync();
+
+            await _context.Entry(ub)
+                          .Reference(x => x.Status)
+                          .LoadAsync();
+
+            if (ub.ShelfId.HasValue)
+            {
+                await _context.Entry(ub)
+                              .Reference(x => x.Shelf)
+                              .LoadAsync();
+            }
+
+            return ub;
+        }
+
     }
 }

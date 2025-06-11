@@ -34,5 +34,7 @@ namespace BookNest_Services.Interface
         Task<IEnumerable<UserBook>> GetUserBooksWithDetailsAsync(int userId, int? statusId = null, int? shelfId = null);
         Task<bool> MoveBookBetweenShelvesAsync(int userId, int bookId, int? newShelfId);
         Task<bool> IsBookInUserLibraryAsync(int userId, int bookId);
+        Task<UserBook> AddOrUpdateShelfForExistingBookAsync(int userId, int bookId, int statusId, int? shelfId);
+
     }
 }
