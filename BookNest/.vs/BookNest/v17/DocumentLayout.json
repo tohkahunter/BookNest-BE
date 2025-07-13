@@ -146,7 +146,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 376,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
@@ -206,18 +206,6 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:22:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:23:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:21:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "IBookShelvesService.cs",
@@ -227,8 +215,7 @@
               "RelativeToolTip": "BookNest_Services\\Interface\\IBookShelvesService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T05:19:06.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T05:19:06.661Z"
             },
             {
               "$type": "Document",
@@ -240,8 +227,7 @@
               "RelativeToolTip": "BookNest_Services\\Service\\BookShelvesService.cs",
               "ViewState": "AgIAAKsAAAAAAAAAAAAqwDQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T05:19:22.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T05:19:22.681Z"
             },
             {
               "$type": "Document",
@@ -253,8 +239,7 @@
               "RelativeToolTip": "BookNest_Services\\Interface\\IBookService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T04:11:41.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T04:11:41.744Z"
             },
             {
               "$type": "Document",
@@ -264,7 +249,7 @@
               "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\BookShelfController.cs",
               "ToolTip": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\BookShelfController.cs",
               "RelativeToolTip": "BookNest_BackEnd\\Controllers\\BookShelfController.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwDgAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T05:26:39.931Z",
               "EditorCaption": ""
@@ -279,8 +264,7 @@
               "RelativeToolTip": "BookNest_Repositories\\Interface\\IBookShelvesRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T05:18:46.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T05:18:46.894Z"
             },
             {
               "$type": "Document",
