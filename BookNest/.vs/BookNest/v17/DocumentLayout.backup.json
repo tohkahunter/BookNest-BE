@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|solutionrelative:booknest_backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\utilities\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\utilities\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EAC7CCD-13B9-3884-832E-2B81F2AC16B9}|BookNest_Services\\BookNest_Services.csproj|solutionrelative:booknest_services\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -110,13 +110,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PasswordHasher.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Utilities\\PasswordHasher.cs",
               "RelativeDocumentMoniker": "BookNest_Services\\Utilities\\PasswordHasher.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Utilities\\PasswordHasher.cs",
               "RelativeToolTip": "BookNest_Services\\Utilities\\PasswordHasher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T15:11:19.709Z",
               "IsPinned": true,
@@ -426,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Service\\UserService.cs",
               "RelativeDocumentMoniker": "BookNest_Services\\Service\\UserService.cs",
@@ -482,7 +482,7 @@
               "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\UserController.cs",
               "RelativeToolTip": "BookNest_BackEnd\\Controllers\\UserController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAmwDcAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAqwDcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T05:10:50.786Z",
               "EditorCaption": ""

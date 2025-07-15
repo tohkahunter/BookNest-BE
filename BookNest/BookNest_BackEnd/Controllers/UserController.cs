@@ -18,7 +18,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(UserRegisterRequest request)
+        public async Task<IActionResult> Register([FromBody]UserRegisterRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -39,7 +39,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(UserLoginRequest user)
+        public async Task<IActionResult> Login([FromBody] UserLoginRequest user)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
