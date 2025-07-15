@@ -48,12 +48,13 @@ namespace BookNest_BackEnd.Controllers
             if (result == null)
                 return Unauthorized("Invalid email or password");
 
-            var token = _jwtService.GenerateToken(result.UserId.ToString(), result.Email);
+            var token = _jwtService.GenerateToken(result.UserId.ToString(), result.Email, result.RoleId);
             return Ok(new { 
                 user = new { 
                     id = result.UserId,
                     email = result.Email,
-                    username = result.Username
+                    username = result.Username,
+                    roleId = result.RoleId,
                 }, 
                 token = token 
             });

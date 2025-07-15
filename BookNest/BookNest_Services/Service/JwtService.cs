@@ -15,7 +15,7 @@ namespace BookNest_Services.Service
             _configuration = configuration;
         }
 
-        public string GenerateToken(string userId, string email)
+        public string GenerateToken(string userId, string email, int roleId)
         {
             var jwtSettings = _configuration.GetSection("JwtSettings");
             var key = Encoding.ASCII.GetBytes(jwtSettings["SecretKey"]);
@@ -25,7 +25,8 @@ namespace BookNest_Services.Service
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, userId),
-                    new Claim(ClaimTypes.Email, email)
+                    new Claim(ClaimTypes.Email, email),
+                    new Claim("RoleId", roleId.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(Convert.ToDouble(jwtSettings["ExpiryInMinutes"])),
                 Issuer = jwtSettings["Issuer"],
