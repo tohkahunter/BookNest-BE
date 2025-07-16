@@ -139,13 +139,44 @@ namespace BookNest_Services.Service
             if (book == null)
                 return false;
 
-            // Check if book has user associations or reviews
-            var hasUserBooks = await _context.UserBooks.AnyAsync(ub => ub.BookId == id);
-            var hasReviews = await _context.Reviews.AnyAsync(r => r.BookId == id);
+            // First, delete all related data to maintain referential integrity
 
-            if (hasUserBooks || hasReviews)
-                throw new InvalidOperationException("Cannot delete book that has user associations or reviews. Consider marking it as inactive instead.");
+            // Delete all comments on reviews for this book
+            var reviewIds = await _context.Reviews
+                .Where(r => r.BookId == id)
+                .Select(r => r.ReviewId)
+                .ToListAsync();
 
+            if (reviewIds.Any())
+            {
+                var comments = await _context.Comments
+                    .Where(c => reviewIds.Contains(c.ReviewId))
+                    .ToListAsync();
+                _context.Comments.RemoveRange(comments);
+            }
+
+            // Delete all reviews for this book
+            var reviews = await _context.Reviews
+                .Where(r => r.BookId == id)
+                .ToListAsync();
+            if (reviews.Any())
+            {
+                _context.Reviews.RemoveRange(reviews);
+            }
+
+            // Delete all user book associations
+            var userBooks = await _context.UserBooks
+                .Where(ub => ub.BookId == id)
+                .ToListAsync();
+            if (userBooks.Any())
+            {
+                _context.UserBooks.RemoveRange(userBooks);
+            }
+
+            // Save the related deletions first
+            await _context.SaveChangesAsync();
+
+            // Finally, delete the book itself
             _bookRepository.Remove(book);
             return true;
         }
