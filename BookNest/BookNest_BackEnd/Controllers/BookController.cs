@@ -5,6 +5,7 @@ using BookNest_Services.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -15,10 +16,12 @@ namespace BookNest_BackEnd.Controllers
     public class BookController : ControllerBase
     {
         private readonly IBookService _bookService;
+        private readonly IReviewService _reviewService;
 
-        public BookController(IBookService bookService)
+        public BookController(IBookService bookService, IReviewService reviewService)
         {
             _bookService = bookService;
+            _reviewService = reviewService;
         }
 
         private int GetUserId()
@@ -36,25 +39,34 @@ namespace BookNest_BackEnd.Controllers
         public async Task<ActionResult<IEnumerable<BookResponse>>> GetAllBooks()
         {
             var books = await _bookService.GetAllBooksAsync();
-            var response = books.Select(b => new BookResponse
+            var response = new List<BookResponse>();
+
+            foreach (var book in books)
             {
-                BookId = b.BookId,
-                Title = b.Title,
-                Isbn13 = b.Isbn13,
-                AuthorId = b.AuthorId,
-                AuthorName = b.Author?.Name,
-                GenreId = b.GenreId,
-                GenreName = b.Genre?.GenreName,
-                Description = b.Description,
-                CoverImageUrl = b.CoverImageUrl,
-                PublicationYear = b.PublicationYear,
-                PageCount = b.PageCount,
-                CreatedBy = b.CreatedBy,
-                CreatedAt = b.CreatedAt,
-                UserBookCount = b.UserBooks?.Count() ?? 0,
-                ReviewCount = b.Reviews?.Count() ?? 0,
-                AverageRating = b.Reviews?.Any() == true ? (decimal?)b.Reviews.Average(r => r.Rating) : null
-            });
+                var averageRating = await _reviewService.GetAverageRatingForBookAsync(book.BookId);
+                var reviewCount = await _reviewService.GetReviewCountForBookAsync(book.BookId);
+
+                response.Add(new BookResponse
+                {
+                    BookId = book.BookId,
+                    Title = book.Title,
+                    Isbn13 = book.Isbn13,
+                    AuthorId = book.AuthorId,
+                    AuthorName = book.Author?.Name,
+                    GenreId = book.GenreId,
+                    GenreName = book.Genre?.GenreName,
+                    Description = book.Description,
+                    CoverImageUrl = book.CoverImageUrl,
+                    PublicationYear = book.PublicationYear,
+                    PageCount = book.PageCount,
+                    CreatedBy = book.CreatedBy,
+                    CreatedAt = book.CreatedAt,
+                    UserBookCount = book.UserBooks?.Count() ?? 0,
+                    ReviewCount = reviewCount,
+                    AverageRating = averageRating > 0 ? averageRating : null
+                });
+            }
+
             return Ok(response);
         }
 
@@ -69,6 +81,9 @@ namespace BookNest_BackEnd.Controllers
             {
                 return NotFound($"Book with ID {id} not found");
             }
+
+            var averageRating = await _reviewService.GetAverageRatingForBookAsync(book.BookId);
+            var reviewCount = await _reviewService.GetReviewCountForBookAsync(book.BookId);
 
             var response = new BookResponse
             {
@@ -86,8 +101,8 @@ namespace BookNest_BackEnd.Controllers
                 CreatedBy = book.CreatedBy,
                 CreatedAt = book.CreatedAt,
                 UserBookCount = book.UserBooks?.Count() ?? 0,
-                ReviewCount = book.Reviews?.Count() ?? 0,
-                AverageRating = book.Reviews?.Any() == true ? (decimal?)book.Reviews.Average(r => r.Rating) : null
+                ReviewCount = reviewCount,
+                AverageRating = averageRating > 0 ? averageRating : null
             };
 
             return Ok(response);
@@ -100,25 +115,34 @@ namespace BookNest_BackEnd.Controllers
         public async Task<ActionResult<IEnumerable<BookResponse>>> GetBooksByAuthor(int authorId)
         {
             var books = await _bookService.GetBooksByAuthorAsync(authorId);
-            var response = books.Select(b => new BookResponse
+            var response = new List<BookResponse>();
+
+            foreach (var book in books)
             {
-                BookId = b.BookId,
-                Title = b.Title,
-                Isbn13 = b.Isbn13,
-                AuthorId = b.AuthorId,
-                AuthorName = b.Author?.Name,
-                GenreId = b.GenreId,
-                GenreName = b.Genre?.GenreName,
-                Description = b.Description,
-                CoverImageUrl = b.CoverImageUrl,
-                PublicationYear = b.PublicationYear,
-                PageCount = b.PageCount,
-                CreatedBy = b.CreatedBy,
-                CreatedAt = b.CreatedAt,
-                UserBookCount = b.UserBooks?.Count() ?? 0,
-                ReviewCount = b.Reviews?.Count() ?? 0,
-                AverageRating = b.Reviews?.Any() == true ? (decimal?)b.Reviews.Average(r => r.Rating) : null
-            });
+                var averageRating = await _reviewService.GetAverageRatingForBookAsync(book.BookId);
+                var reviewCount = await _reviewService.GetReviewCountForBookAsync(book.BookId);
+
+                response.Add(new BookResponse
+                {
+                    BookId = book.BookId,
+                    Title = book.Title,
+                    Isbn13 = book.Isbn13,
+                    AuthorId = book.AuthorId,
+                    AuthorName = book.Author?.Name,
+                    GenreId = book.GenreId,
+                    GenreName = book.Genre?.GenreName,
+                    Description = book.Description,
+                    CoverImageUrl = book.CoverImageUrl,
+                    PublicationYear = book.PublicationYear,
+                    PageCount = book.PageCount,
+                    CreatedBy = book.CreatedBy,
+                    CreatedAt = book.CreatedAt,
+                    UserBookCount = book.UserBooks?.Count() ?? 0,
+                    ReviewCount = reviewCount,
+                    AverageRating = averageRating > 0 ? averageRating : null
+                });
+            }
+
             return Ok(response);
         }
 
@@ -129,25 +153,34 @@ namespace BookNest_BackEnd.Controllers
         public async Task<ActionResult<IEnumerable<BookResponse>>> GetBooksByGenre(int genreId)
         {
             var books = await _bookService.GetBooksByGenreAsync(genreId);
-            var response = books.Select(b => new BookResponse
+            var response = new List<BookResponse>();
+
+            foreach (var book in books)
             {
-                BookId = b.BookId,
-                Title = b.Title,
-                Isbn13 = b.Isbn13,
-                AuthorId = b.AuthorId,
-                AuthorName = b.Author?.Name,
-                GenreId = b.GenreId,
-                GenreName = b.Genre?.GenreName,
-                Description = b.Description,
-                CoverImageUrl = b.CoverImageUrl,
-                PublicationYear = b.PublicationYear,
-                PageCount = b.PageCount,
-                CreatedBy = b.CreatedBy,
-                CreatedAt = b.CreatedAt,
-                UserBookCount = b.UserBooks?.Count() ?? 0,
-                ReviewCount = b.Reviews?.Count() ?? 0,
-                AverageRating = b.Reviews?.Any() == true ? (decimal?)b.Reviews.Average(r => r.Rating) : null
-            });
+                var averageRating = await _reviewService.GetAverageRatingForBookAsync(book.BookId);
+                var reviewCount = await _reviewService.GetReviewCountForBookAsync(book.BookId);
+
+                response.Add(new BookResponse
+                {
+                    BookId = book.BookId,
+                    Title = book.Title,
+                    Isbn13 = book.Isbn13,
+                    AuthorId = book.AuthorId,
+                    AuthorName = book.Author?.Name,
+                    GenreId = book.GenreId,
+                    GenreName = book.Genre?.GenreName,
+                    Description = book.Description,
+                    CoverImageUrl = book.CoverImageUrl,
+                    PublicationYear = book.PublicationYear,
+                    PageCount = book.PageCount,
+                    CreatedBy = book.CreatedBy,
+                    CreatedAt = book.CreatedAt,
+                    UserBookCount = book.UserBooks?.Count() ?? 0,
+                    ReviewCount = reviewCount,
+                    AverageRating = averageRating > 0 ? averageRating : null
+                });
+            }
+
             return Ok(response);
         }
 
@@ -158,25 +191,34 @@ namespace BookNest_BackEnd.Controllers
         public async Task<ActionResult<IEnumerable<BookResponse>>> SearchBooks([FromQuery] string searchTerm)
         {
             var books = await _bookService.SearchBooksAsync(searchTerm);
-            var response = books.Select(b => new BookResponse
+            var response = new List<BookResponse>();
+
+            foreach (var book in books)
             {
-                BookId = b.BookId,
-                Title = b.Title,
-                Isbn13 = b.Isbn13,
-                AuthorId = b.AuthorId,
-                AuthorName = b.Author?.Name,
-                GenreId = b.GenreId,
-                GenreName = b.Genre?.GenreName,
-                Description = b.Description,
-                CoverImageUrl = b.CoverImageUrl,
-                PublicationYear = b.PublicationYear,
-                PageCount = b.PageCount,
-                CreatedBy = b.CreatedBy,
-                CreatedAt = b.CreatedAt,
-                UserBookCount = b.UserBooks?.Count() ?? 0,
-                ReviewCount = b.Reviews?.Count() ?? 0,
-                AverageRating = b.Reviews?.Any() == true ? (decimal?)b.Reviews.Average(r => r.Rating) : null
-            });
+                var averageRating = await _reviewService.GetAverageRatingForBookAsync(book.BookId);
+                var reviewCount = await _reviewService.GetReviewCountForBookAsync(book.BookId);
+
+                response.Add(new BookResponse
+                {
+                    BookId = book.BookId,
+                    Title = book.Title,
+                    Isbn13 = book.Isbn13,
+                    AuthorId = book.AuthorId,
+                    AuthorName = book.Author?.Name,
+                    GenreId = book.GenreId,
+                    GenreName = book.Genre?.GenreName,
+                    Description = book.Description,
+                    CoverImageUrl = book.CoverImageUrl,
+                    PublicationYear = book.PublicationYear,
+                    PageCount = book.PageCount,
+                    CreatedBy = book.CreatedBy,
+                    CreatedAt = book.CreatedAt,
+                    UserBookCount = book.UserBooks?.Count() ?? 0,
+                    ReviewCount = reviewCount,
+                    AverageRating = averageRating > 0 ? averageRating : null
+                });
+            }
+
             return Ok(response);
         }
 
@@ -187,25 +229,34 @@ namespace BookNest_BackEnd.Controllers
         public async Task<ActionResult<IEnumerable<BookResponse>>> GetPopularBooks([FromQuery] int count = 10)
         {
             var books = await _bookService.GetPopularBooksAsync(count);
-            var response = books.Select(b => new BookResponse
+            var response = new List<BookResponse>();
+
+            foreach (var book in books)
             {
-                BookId = b.BookId,
-                Title = b.Title,
-                Isbn13 = b.Isbn13,
-                AuthorId = b.AuthorId,
-                AuthorName = b.Author?.Name,
-                GenreId = b.GenreId,
-                GenreName = b.Genre?.GenreName,
-                Description = b.Description,
-                CoverImageUrl = b.CoverImageUrl,
-                PublicationYear = b.PublicationYear,
-                PageCount = b.PageCount,
-                CreatedBy = b.CreatedBy,
-                CreatedAt = b.CreatedAt,
-                UserBookCount = b.UserBooks?.Count() ?? 0,
-                ReviewCount = b.Reviews?.Count() ?? 0,
-                AverageRating = b.Reviews?.Any() == true ? (decimal?)b.Reviews.Average(r => r.Rating) : null
-            });
+                var averageRating = await _reviewService.GetAverageRatingForBookAsync(book.BookId);
+                var reviewCount = await _reviewService.GetReviewCountForBookAsync(book.BookId);
+
+                response.Add(new BookResponse
+                {
+                    BookId = book.BookId,
+                    Title = book.Title,
+                    Isbn13 = book.Isbn13,
+                    AuthorId = book.AuthorId,
+                    AuthorName = book.Author?.Name,
+                    GenreId = book.GenreId,
+                    GenreName = book.Genre?.GenreName,
+                    Description = book.Description,
+                    CoverImageUrl = book.CoverImageUrl,
+                    PublicationYear = book.PublicationYear,
+                    PageCount = book.PageCount,
+                    CreatedBy = book.CreatedBy,
+                    CreatedAt = book.CreatedAt,
+                    UserBookCount = book.UserBooks?.Count() ?? 0,
+                    ReviewCount = reviewCount,
+                    AverageRating = averageRating > 0 ? averageRating : null
+                });
+            }
+
             return Ok(response);
         }
 
@@ -216,25 +267,34 @@ namespace BookNest_BackEnd.Controllers
         public async Task<ActionResult<IEnumerable<BookResponse>>> GetRecentBooks([FromQuery] int count = 10)
         {
             var books = await _bookService.GetRecentlyAddedBooksAsync(count);
-            var response = books.Select(b => new BookResponse
+            var response = new List<BookResponse>();
+
+            foreach (var book in books)
             {
-                BookId = b.BookId,
-                Title = b.Title,
-                Isbn13 = b.Isbn13,
-                AuthorId = b.AuthorId,
-                AuthorName = b.Author?.Name,
-                GenreId = b.GenreId,
-                GenreName = b.Genre?.GenreName,
-                Description = b.Description,
-                CoverImageUrl = b.CoverImageUrl,
-                PublicationYear = b.PublicationYear,
-                PageCount = b.PageCount,
-                CreatedBy = b.CreatedBy,
-                CreatedAt = b.CreatedAt,
-                UserBookCount = b.UserBooks?.Count() ?? 0,
-                ReviewCount = b.Reviews?.Count() ?? 0,
-                AverageRating = b.Reviews?.Any() == true ? (decimal?)b.Reviews.Average(r => r.Rating) : null
-            });
+                var averageRating = await _reviewService.GetAverageRatingForBookAsync(book.BookId);
+                var reviewCount = await _reviewService.GetReviewCountForBookAsync(book.BookId);
+
+                response.Add(new BookResponse
+                {
+                    BookId = book.BookId,
+                    Title = book.Title,
+                    Isbn13 = book.Isbn13,
+                    AuthorId = book.AuthorId,
+                    AuthorName = book.Author?.Name,
+                    GenreId = book.GenreId,
+                    GenreName = book.Genre?.GenreName,
+                    Description = book.Description,
+                    CoverImageUrl = book.CoverImageUrl,
+                    PublicationYear = book.PublicationYear,
+                    PageCount = book.PageCount,
+                    CreatedBy = book.CreatedBy,
+                    CreatedAt = book.CreatedAt,
+                    UserBookCount = book.UserBooks?.Count() ?? 0,
+                    ReviewCount = reviewCount,
+                    AverageRating = averageRating > 0 ? averageRating : null
+                });
+            }
+
             return Ok(response);
         }
 
@@ -336,6 +396,9 @@ namespace BookNest_BackEnd.Controllers
 
                 var updatedBook = await _bookService.UpdateBookAsync(book);
 
+                var averageRating = await _reviewService.GetAverageRatingForBookAsync(updatedBook.BookId);
+                var reviewCount = await _reviewService.GetReviewCountForBookAsync(updatedBook.BookId);
+
                 var response = new UpdateBookResponse
                 {
                     Message = "Book updated successfully",
@@ -355,8 +418,8 @@ namespace BookNest_BackEnd.Controllers
                         CreatedBy = updatedBook.CreatedBy,
                         CreatedAt = updatedBook.CreatedAt,
                         UserBookCount = updatedBook.UserBooks?.Count() ?? 0,
-                        ReviewCount = updatedBook.Reviews?.Count() ?? 0,
-                        AverageRating = updatedBook.Reviews?.Any() == true ? (decimal?)updatedBook.Reviews.Average(r => r.Rating) : null
+                        ReviewCount = reviewCount,
+                        AverageRating = averageRating > 0 ? averageRating : null
                     }
                 };
 
