@@ -2,6 +2,7 @@
 using BookNest_Services.Interface;
 using BookNest_Repositories.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookNest_BackEnd.Controllers
 {
@@ -40,6 +41,7 @@ namespace BookNest_BackEnd.Controllers
             return Ok(user);
         }
 
+        [Authorize(Roles = "3")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] User user)
         {
@@ -48,6 +50,7 @@ namespace BookNest_BackEnd.Controllers
             return Ok(new { message = "User profile updated successfully" });
         }
 
+        [Authorize(Roles = "3")]
         [HttpPut("{id}/password")]
         public async Task<IActionResult> UpdateUserPassword(int id, [FromBody] string newPassword)
         {
@@ -56,6 +59,7 @@ namespace BookNest_BackEnd.Controllers
             return Ok(new { message = "User password updated successfully" });
         }
 
+        [Authorize(Roles = "2")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
