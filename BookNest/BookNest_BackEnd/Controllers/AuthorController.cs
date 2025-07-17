@@ -109,7 +109,7 @@ namespace BookNest_BackEnd.Controllers
         /// Create a new author (Admin only)
         /// </summary>
         [HttpPost]
-        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<CreateAuthorResponse>> CreateAuthor([FromBody] CreateAuthorRequest request)
         {
             if (!ModelState.IsValid)
@@ -151,7 +151,7 @@ namespace BookNest_BackEnd.Controllers
         /// Update an existing author (Admin only)
         /// </summary>
         [HttpPut("{id}")]
-        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<UpdateAuthorResponse>> UpdateAuthor(int id, [FromBody] UpdateAuthorRequest request)
         {
             if (!ModelState.IsValid)
@@ -198,7 +198,7 @@ namespace BookNest_BackEnd.Controllers
         /// Delete an author (Admin only)
         /// </summary>
         [HttpDelete("{id}")]
-        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<DeleteResponse>> DeleteAuthor(int id)
         {
             try
@@ -241,7 +241,7 @@ namespace BookNest_BackEnd.Controllers
         /// Check if author name is unique (Admin helper)
         /// </summary>
         [HttpGet("check-name-unique")]
-        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<bool>> CheckAuthorNameUnique([FromQuery] string name, [FromQuery] int? excludeId = null)
         {
             if (string.IsNullOrWhiteSpace(name))

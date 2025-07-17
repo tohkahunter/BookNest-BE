@@ -28,6 +28,7 @@ namespace BookNest_BackEnd.Controllers
         #region Reading Status Management
 
         [HttpPost("add-book")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> AddBookToShelf([FromBody] AddBookToShelfRequest request)
         {
             if (!ModelState.IsValid)
@@ -73,6 +74,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpPut("update-status")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> UpdateBookStatus([FromBody] UpdateBookStatusRequest request)
         {
             if (!ModelState.IsValid)
@@ -115,6 +117,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpPut("update-progress")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> UpdateReadingProgress([FromBody] UpdateReadingProgressRequest request)
         {
             if (!ModelState.IsValid)
@@ -159,6 +162,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpDelete("remove-book/{bookId}")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> RemoveBookFromShelf(int bookId)
         {
             var userId = GetUserId();
@@ -177,6 +181,7 @@ namespace BookNest_BackEnd.Controllers
         #region View Books by Status/Shelf
 
         [HttpGet("my-books")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> GetMyBooks([FromQuery] int? statusId = null, [FromQuery] int? shelfId = null)
         {
             var userId = GetUserId();
@@ -209,6 +214,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpGet("status/{statusId}")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> GetBooksByStatus(int statusId)
         {
             var userId = GetUserId();
@@ -241,6 +247,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpGet("shelf/{shelfId}")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> GetBooksByShelf(int shelfId)
         {
             var userId = GetUserId();
@@ -273,6 +280,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpGet("book/{bookId}")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> GetUserBook(int bookId)
         {
             var userId = GetUserId();
@@ -312,6 +320,7 @@ namespace BookNest_BackEnd.Controllers
         #region Custom Shelves Management
 
         [HttpPost("create-shelf")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> CreateCustomShelf([FromBody] CreateShelfRequest request)
         {
             if (!ModelState.IsValid)
@@ -344,6 +353,8 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpPut("update-shelf")]
+        [Authorize(Roles = "2")]
+
         public async Task<IActionResult> UpdateCustomShelf([FromBody] UpdateShelfRequest request)
         {
             if (!ModelState.IsValid)
@@ -378,6 +389,8 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpDelete("delete-shelf/{shelfId}")]
+        [Authorize(Roles = "2")]
+
         public async Task<IActionResult> DeleteCustomShelf(int shelfId)
         {
             var userId = GetUserId();
@@ -392,6 +405,8 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpGet("my-shelves")]
+        [Authorize(Roles = "2")]
+
         public async Task<IActionResult> GetMyCustomShelves()
         {
             var userId = GetUserId();
@@ -414,6 +429,8 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpPut("move-book")]
+        [Authorize(Roles = "2")]
+
         public async Task<IActionResult> MoveBookToShelf([FromBody] MoveBookToShelfRequest request)
         {
             if (!ModelState.IsValid)
@@ -435,7 +452,7 @@ namespace BookNest_BackEnd.Controllers
         #region Reading Statuses
 
         [HttpGet("reading-statuses")]
-        [AllowAnonymous]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> GetReadingStatuses()
         {
             var statuses = await _bookShelfService.GetAllReadingStatusesAsync();
@@ -455,6 +472,7 @@ namespace BookNest_BackEnd.Controllers
         #region Utility Endpoints
 
         [HttpGet("check-book/{bookId}")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> CheckBookInLibrary(int bookId)
         {
             var userId = GetUserId();
