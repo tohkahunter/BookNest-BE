@@ -39,7 +39,6 @@ namespace BookNest_BackEnd.Controllers
         /// Create a review for a book (User must have book on "Read" shelf)
         /// </summary>
         [HttpPost]
-        [Authorize]
         public async Task<ActionResult<CreateReviewResponse>> CreateReview([FromBody] CreateReviewRequest request)
         {
             if (!ModelState.IsValid)
@@ -92,7 +91,6 @@ namespace BookNest_BackEnd.Controllers
         /// Update an existing review
         /// </summary>
         [HttpPut("{id}")]
-        [Authorize]
         public async Task<ActionResult<UpdateReviewResponse>> UpdateReview(int id, [FromBody] UpdateReviewRequest request)
         {
             if (!ModelState.IsValid)
@@ -148,7 +146,6 @@ namespace BookNest_BackEnd.Controllers
         /// Delete a review
         /// </summary>
         [HttpDelete("{id}")]
-        [Authorize]
         public async Task<ActionResult<ReviewDeleteResponse>> DeleteReview(int id)
         {
             var userId = GetUserId();
@@ -280,7 +277,6 @@ namespace BookNest_BackEnd.Controllers
         /// Check if current user can review a specific book
         /// </summary>
         [HttpGet("book/{bookId}/can-review")]
-        [Authorize]
         public async Task<ActionResult<bool>> CanUserReviewBook(int bookId)
         {
             var userId = GetUserId();
@@ -299,7 +295,6 @@ namespace BookNest_BackEnd.Controllers
         /// Get current user's review for a specific book
         /// </summary>
         [HttpGet("book/{bookId}/my-review")]
-        [Authorize]
         public async Task<ActionResult<ReviewResponse>> GetMyReviewForBook(int bookId)
         {
             var userId = GetUserId();
@@ -380,7 +375,6 @@ namespace BookNest_BackEnd.Controllers
         /// Get current user's reviews
         /// </summary>
         [HttpGet("my-reviews")]
-        [Authorize]
         public async Task<ActionResult<UserReviewsResponse>> GetMyReviews()
         {
             var userId = GetUserId();
@@ -463,7 +457,6 @@ namespace BookNest_BackEnd.Controllers
         /// Create a comment on a review
         /// </summary>
         [HttpPost("{reviewId}/comments")]
-        [Authorize]
         public async Task<ActionResult<CreateCommentResponse>> CreateComment(int reviewId, [FromBody] CreateCommentRequest request)
         {
             if (!ModelState.IsValid)
@@ -512,7 +505,6 @@ namespace BookNest_BackEnd.Controllers
         /// Update a comment
         /// </summary>
         [HttpPut("comments/{commentId}")]
-        [Authorize]
         public async Task<ActionResult<UpdateCommentResponse>> UpdateComment(int commentId, [FromBody] UpdateCommentRequest request)
         {
             if (!ModelState.IsValid)
@@ -565,7 +557,6 @@ namespace BookNest_BackEnd.Controllers
         /// Delete a comment
         /// </summary>
         [HttpDelete("comments/{commentId}")]
-        [Authorize]
         public async Task<ActionResult<ReviewDeleteResponse>> DeleteComment(int commentId)
         {
             var userId = GetUserId();
