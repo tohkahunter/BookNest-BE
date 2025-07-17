@@ -26,7 +26,8 @@ namespace BookNest_Services.Service
                 {
                     new Claim(ClaimTypes.NameIdentifier, userId),
                     new Claim(ClaimTypes.Email, email),
-                    new Claim("RoleId", roleId.ToString())
+                    new Claim("RoleId", roleId.ToString()),
+                    new Claim(ClaimTypes.Role, roleId.ToString()) // Add this line for ASP.NET Core role-based auth
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(Convert.ToDouble(jwtSettings["ExpiryInMinutes"])),
                 Issuer = jwtSettings["Issuer"],
