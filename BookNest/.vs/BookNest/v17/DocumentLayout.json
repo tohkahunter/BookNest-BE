@@ -150,7 +150,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 376,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -206,32 +206,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ICommentRepository.cs",
-              "DocumentMoniker": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\ICommentRepository.cs",
-              "RelativeDocumentMoniker": "BookNest_Repositories\\Interface\\ICommentRepository.cs",
-              "ToolTip": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\ICommentRepository.cs",
-              "RelativeToolTip": "BookNest_Repositories\\Interface\\ICommentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T11:54:03.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IReviewRepository.cs",
-              "DocumentMoniker": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\IReviewRepository.cs",
-              "RelativeDocumentMoniker": "BookNest_Repositories\\Interface\\IReviewRepository.cs",
-              "ToolTip": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\IReviewRepository.cs",
-              "RelativeToolTip": "BookNest_Repositories\\Interface\\IReviewRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T11:53:51.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ReviewController.cs",
               "DocumentMoniker": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\ReviewController.cs",
@@ -249,11 +223,37 @@
               "Title": "ReviewService.cs",
               "DocumentMoniker": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Services\\Service\\ReviewService.cs",
               "RelativeDocumentMoniker": "BookNest_Services\\Service\\ReviewService.cs",
-              "ToolTip": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Services\\Service\\ReviewService.cs*",
-              "RelativeToolTip": "BookNest_Services\\Service\\ReviewService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABAAAAAAAAAAA==",
+              "ToolTip": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Services\\Service\\ReviewService.cs",
+              "RelativeToolTip": "BookNest_Services\\Service\\ReviewService.cs",
+              "ViewState": "AgIAAOYAAAAAAAAAAADwvxsAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-16T11:46:15.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IReviewRepository.cs",
+              "DocumentMoniker": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\IReviewRepository.cs",
+              "RelativeDocumentMoniker": "BookNest_Repositories\\Interface\\IReviewRepository.cs",
+              "ToolTip": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\IReviewRepository.cs",
+              "RelativeToolTip": "BookNest_Repositories\\Interface\\IReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T11:53:51.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ICommentRepository.cs",
+              "DocumentMoniker": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\ICommentRepository.cs",
+              "RelativeDocumentMoniker": "BookNest_Repositories\\Interface\\ICommentRepository.cs",
+              "ToolTip": "D:\\SWD\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\ICommentRepository.cs",
+              "RelativeToolTip": "BookNest_Repositories\\Interface\\ICommentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T11:54:03.671Z",
               "EditorCaption": ""
             },
             {
