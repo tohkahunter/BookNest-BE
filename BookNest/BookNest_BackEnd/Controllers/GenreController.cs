@@ -43,6 +43,8 @@ namespace BookNest_BackEnd.Controllers
         /// Get a genre by ID
         /// </summary>
         [HttpGet("{id}")]
+        [Authorize(Roles = "User")]
+
         public async Task<ActionResult<GenreResponse>> GetGenreById(int id)
         {
             var genre = await _context.Genres
