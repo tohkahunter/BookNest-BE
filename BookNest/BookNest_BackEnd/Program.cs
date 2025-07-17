@@ -56,7 +56,7 @@ builder.Services.AddAuthentication(options =>
 // Register User Repository and Service
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthenService, AuthenService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
@@ -65,6 +65,7 @@ builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Repository registrations
 builder.Services.AddScoped<IUserBooksRepository, UserBooksRepository>();

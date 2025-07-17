@@ -1,63 +1,67 @@
-﻿using BookNest_Services.Interface;
-using BookNest_Services.Request.User;
-using BookNest_Services.Service;
+﻿using Microsoft.AspNetCore.Mvc;
+using BookNest_Services.Interface;
 using BookNest_Repositories.Models;
-using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BookNest_BackEnd.Controllers
 {
-    public class UserController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly JwtService _jwtService;
 
-        public UserController(IUserService userService, JwtService jwtService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _jwtService = jwtService;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody]UserRegisterRequest request)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById(int id)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var user = new User
-            {
-                Username = request.Username,
-                Email = request.Email,
-                FirstName = request.FirstName,
-                LastName = request.LastName
-            };
-
-            var result = await _userService.RegisterUserAsync(user, request.Password);
-            if (result == null)
-                return BadRequest("Email or username already exists");
-
-            return Ok(new { message = "Account created successfully" });
+            var user = await _userService.GetUserByIdAsync(id);
+            if (user == null) return NotFound();
+            return Ok(user);
         }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginRequest user)
+        [HttpGet("by-email/{email}")]
+        public async Task<IActionResult> GetUserByEmail(string email)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            var user = await _userService.GetUserByEmailAsync(email);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
 
-            var result = await _userService.AuthenticateUserAsync(user.Email, user.Password);
-            if (result == null)
-                return Unauthorized("Invalid email or password");
+        [HttpGet("by-username/{username}")]
+        public async Task<IActionResult> GetUserByUsername(string username)
+        {
+            var user = await _userService.GetUserByUsernameAsync(username);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
 
-            var token = _jwtService.GenerateToken(result.UserId.ToString(), result.Email, result.RoleId);
-            return Ok(new { 
-                user = new { 
-                    id = result.UserId,
-                    email = result.Email,
-                    username = result.Username,
-                    roleId = result.RoleId,
-                }, 
-                token = token 
-            });
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] User user)
+        {
+            var result = await _userService.UpdateUserProfileAsync(id, user);
+            if (!result) return NotFound();
+            return Ok(new { message = "User profile updated successfully" });
+        }
+
+        [HttpPut("{id}/password")]
+        public async Task<IActionResult> UpdateUserPassword(int id, [FromBody] string newPassword)
+        {
+            var result = await _userService.UpdateUserPasswordAsync(id, newPassword);
+            if (!result) return NotFound();
+            return Ok(new { message = "User password updated successfully" });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var result = await _userService.DeleteUserAsync(id);
+            if (!result) return NotFound();
+            return Ok(new { message = "User deleted successfully" });
         }
     }
 }

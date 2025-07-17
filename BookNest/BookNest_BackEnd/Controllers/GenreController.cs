@@ -26,6 +26,7 @@ namespace BookNest_BackEnd.Controllers
         /// Get all genres
         /// </summary>
         [HttpGet]
+        [Authorize (Roles = "2")] // Assuming role 2 is for Admin or authorized users
         public async Task<ActionResult<IEnumerable<GenreResponse>>> GetAllGenres()
         {
             var genres = await _context.Genres.ToListAsync();
@@ -43,7 +44,7 @@ namespace BookNest_BackEnd.Controllers
         /// Get a genre by ID
         /// </summary>
         [HttpGet("{id}")]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "2")]
 
         public async Task<ActionResult<GenreResponse>> GetGenreById(int id)
         {
@@ -69,7 +70,7 @@ namespace BookNest_BackEnd.Controllers
         /// Create a new genre (Admin only)
         /// </summary>
         [HttpPost]
-        [Authorize] // Add role-based authorization as needed
+        [Authorize(Roles ="3")] // Add role-based authorization as needed
         public async Task<ActionResult<CreateGenreResponse>> CreateGenre([FromBody] CreateGenreRequest request)
         {
             if (!ModelState.IsValid)
@@ -110,7 +111,7 @@ namespace BookNest_BackEnd.Controllers
         /// Update an existing genre (Admin only)
         /// </summary>
         [HttpPut("{id}")]
-        [Authorize] // Add role-based authorization as needed
+        [Authorize(Roles = "3")] // Add role-based authorization as needed
         public async Task<ActionResult<UpdateGenreResponse>> UpdateGenre(int id, [FromBody] UpdateGenreRequest request)
         {
             if (!ModelState.IsValid)
@@ -159,7 +160,7 @@ namespace BookNest_BackEnd.Controllers
         /// Delete a genre (Admin only)
         /// </summary>
         [HttpDelete("{id}")]
-        [Authorize] // Add role-based authorization as needed
+        [Authorize(Roles = "3")] // Add role-based authorization as needed
         public async Task<ActionResult<DeleteResponse>> DeleteGenre(int id)
         {
             var genre = await _context.Genres.FindAsync(id);
