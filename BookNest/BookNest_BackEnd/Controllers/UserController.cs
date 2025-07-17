@@ -42,6 +42,14 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [Authorize(Roles = "3")]
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _userService.GetAllUsersAsync();
+            return Ok(users);
+        }
+
+        [Authorize(Roles = "3")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] User user)
         {
