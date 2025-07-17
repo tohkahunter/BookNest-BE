@@ -306,7 +306,7 @@ namespace BookNest_BackEnd.Controllers
         /// Create a new book (Admin only)
         /// </summary>
         [HttpPost]
-        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<CreateBookResponse>> CreateBook([FromBody] CreateBookRequest request)
         {
             if (!ModelState.IsValid)
@@ -370,7 +370,7 @@ namespace BookNest_BackEnd.Controllers
         /// Update an existing book (Admin only)
         /// </summary>
         [HttpPut("{id}")]
-        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<UpdateBookResponse>> UpdateBook(int id, [FromBody] UpdateBookRequest request)
         {
             if (!ModelState.IsValid)
@@ -439,7 +439,7 @@ namespace BookNest_BackEnd.Controllers
         /// Delete a book (Admin only)
         /// </summary>
         [HttpDelete("{id}")]
-        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<DeleteResponse>> DeleteBook(int id)
         {
             try
@@ -482,7 +482,7 @@ namespace BookNest_BackEnd.Controllers
         /// Check if ISBN is unique (Admin helper)
         /// </summary>
         [HttpGet("check-isbn-unique")]
-        [Authorize(Roles = "3")] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
+        [Authorize] // Add role-based authorization as needed: [Authorize(Roles = "Admin")]
         public async Task<ActionResult<bool>> CheckIsbnUnique([FromQuery] string isbn)
         {
             if (string.IsNullOrWhiteSpace(isbn))
