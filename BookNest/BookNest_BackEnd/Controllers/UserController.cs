@@ -2,6 +2,8 @@
 using BookNest_Services.Interface;
 using BookNest_Repositories.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using BookNest_Services.Request.User;
 
 namespace BookNest_BackEnd.Controllers
 {
@@ -17,6 +19,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "3")]
         public async Task<IActionResult> GetUserById(int id)
         {
             var user = await _userService.GetUserByIdAsync(id);
@@ -40,15 +43,17 @@ namespace BookNest_BackEnd.Controllers
             return Ok(user);
         }
 
+        [Authorize(Roles = "2")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] User user)
+        public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] UpdateUserRequest request)
         {
-            var result = await _userService.UpdateUserProfileAsync(id, user);
+            var result = await _userService.UpdateUserProfileAsync(id, request);
             if (!result) return NotFound();
             return Ok(new { message = "User profile updated successfully" });
         }
 
         [HttpPut("{id}/password")]
+        [Authorize(Roles = "2")]
         public async Task<IActionResult> UpdateUserPassword(int id, [FromBody] string newPassword)
         {
             var result = await _userService.UpdateUserPasswordAsync(id, newPassword);
@@ -57,6 +62,7 @@ namespace BookNest_BackEnd.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "3")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             var result = await _userService.DeleteUserAsync(id);
