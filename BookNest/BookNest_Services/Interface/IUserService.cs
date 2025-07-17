@@ -15,5 +15,6 @@ namespace BookNest_Services.Interface
         Task<bool> UpdateUserProfileAsync(int userId, User user);
         Task<bool> UpdateUserPasswordAsync(int userId, string newPassword);
         Task<bool> DeleteUserAsync(int userId);
+        Task<IEnumerable<User>> GetAllUsersAsync();
     }
 }
