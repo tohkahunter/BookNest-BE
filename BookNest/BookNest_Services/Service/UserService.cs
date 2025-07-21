@@ -36,6 +36,11 @@ namespace BookNest_Services.Service
             return users.FirstOrDefault();
         }
 
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        {
+            return await _userRepository.GetAllAsync();
+        }
+
         public async Task<bool> UpdateUserProfileAsync(int userId, User user)
         {
             var existingUser = await GetUserByIdAsync(userId);

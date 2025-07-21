@@ -26,7 +26,6 @@ namespace BookNest_BackEnd.Controllers
         /// Get all genres
         /// </summary>
         [HttpGet]
-        [Authorize (Roles = "2")] // Assuming role 2 is for Admin or authorized users
         public async Task<ActionResult<IEnumerable<GenreResponse>>> GetAllGenres()
         {
             var genres = await _context.Genres.ToListAsync();
@@ -44,7 +43,6 @@ namespace BookNest_BackEnd.Controllers
         /// Get a genre by ID
         /// </summary>
         [HttpGet("{id}")]
-        [Authorize(Roles = "2")]
 
         public async Task<ActionResult<GenreResponse>> GetGenreById(int id)
         {
