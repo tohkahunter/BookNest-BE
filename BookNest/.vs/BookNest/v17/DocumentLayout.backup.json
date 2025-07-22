@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 376,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 29,
           "Children": [
             {
               "$type": "Bookmark",
@@ -87,36 +87,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Program.cs",
-              "RelativeDocumentMoniker": "BookNest_BackEnd\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Program.cs",
-              "RelativeToolTip": "BookNest_BackEnd\\Program.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T04:15:09.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\appsettings.json",
-              "RelativeDocumentMoniker": "BookNest_BackEnd\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\appsettings.json",
-              "RelativeToolTip": "BookNest_BackEnd\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-22T03:55:34.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
@@ -203,8 +173,29 @@
               "Name": "ST:21:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Program.cs",
+              "RelativeDocumentMoniker": "BookNest_BackEnd\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Program.cs",
+              "RelativeToolTip": "BookNest_BackEnd\\Program.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T04:15:09.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\appsettings.json",
+              "RelativeDocumentMoniker": "BookNest_BackEnd\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\appsettings.json",
+              "RelativeToolTip": "BookNest_BackEnd\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-22T03:55:34.509Z"
             },
             {
               "$type": "Document",
@@ -216,8 +207,7 @@
               "RelativeToolTip": "BookNest_BackEnd\\Dockerfile",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-22T03:17:07.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-22T03:17:07.24Z"
             },
             {
               "$type": "Document",
