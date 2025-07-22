@@ -3,11 +3,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy solution and restore as distinct layers
-COPY ../BookNest.sln ./
-COPY ../BookNest_BackEnd/ ./BookNest_BackEnd/
-COPY ../BookNest_Models/ ./BookNest_Models/
-COPY ../BookNest_Repositories/ ./BookNest_Repositories/
-COPY ../BookNest_Services/ ./BookNest_Services/
+COPY BookNest_BackEnd/ ./BookNest_BackEnd/
+COPY BookNest_Models/ ./BookNest_Models/
+COPY BookNest_Repositories/ ./BookNest_Repositories/
+COPY BookNest_Services/ ./BookNest_Services/
+COPY BookNest.sln ./
 
 WORKDIR /src/BookNest_BackEnd
 RUN dotnet restore
