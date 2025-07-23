@@ -3,6 +3,7 @@ using BookNest_Services.Interface;
 using BookNest_Repositories.Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using BookNest_Services.Request.User;
 
 namespace BookNest_BackEnd.Controllers
 {
@@ -51,9 +52,9 @@ namespace BookNest_BackEnd.Controllers
 
         //[Authorize(Roles = "2")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] User user)
+        public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] UpdateUserProfileRequest request)
         {
-            var result = await _userService.UpdateUserProfileAsync(id, user);
+            var result = await _userService.UpdateUserProfileAsync(id, request);
             if (!result) return NotFound();
             return Ok(new { message = "User profile updated successfully" });
         }
