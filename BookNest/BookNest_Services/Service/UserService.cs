@@ -1,6 +1,7 @@
 ﻿using BookNest_Repositories.Interface;
 using BookNest_Repositories.Models;
 using BookNest_Services.Interface;
+using BookNest_Services.Request.User;
 using BookNest_Services.Utilities;
 using System;
 using System.Collections.Generic;
@@ -41,15 +42,21 @@ namespace BookNest_Services.Service
             return await _userRepository.GetAllAsync();
         }
 
-        public async Task<bool> UpdateUserProfileAsync(int userId, User user)
+        public async Task<bool> UpdateUserProfileAsync(int userId, UpdateUserProfileRequest request)
         {
             var existingUser = await GetUserByIdAsync(userId);
             if (existingUser == null) return false;
 
-            // Update only allowed fields
-            existingUser.FirstName = user.FirstName;
-            existingUser.LastName = user.LastName;
-            existingUser.ProfilePictureUrl = user.ProfilePictureUrl;
+            if (!string.IsNullOrEmpty(request.Username))
+                existingUser.Username = request.Username;
+            if (!string.IsNullOrEmpty(request.Email))
+                existingUser.Email = request.Email;
+            if (!string.IsNullOrEmpty(request.FirstName))
+                existingUser.FirstName = request.FirstName;
+            if (!string.IsNullOrEmpty(request.LastName))
+                existingUser.LastName = request.LastName;
+            if (!string.IsNullOrEmpty(request.ProfilePictureUrl))
+                existingUser.ProfilePictureUrl = request.ProfilePictureUrl;
 
             _userRepository.Update(existingUser);
             return true;
@@ -70,7 +77,8 @@ namespace BookNest_Services.Service
             var user = await GetUserByIdAsync(userId);
             if (user == null) return false;
 
-            _userRepository.Remove(user);
+            user.IsActive = false;
+            _userRepository.Update(user);
             return true;
         }
     }
