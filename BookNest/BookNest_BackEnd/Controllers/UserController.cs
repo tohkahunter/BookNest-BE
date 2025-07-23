@@ -49,7 +49,7 @@ namespace BookNest_BackEnd.Controllers
             return Ok(users);
         }
 
-        [Authorize(Roles = "3")]
+        //[Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUserProfile(int id, [FromBody] User user)
         {
