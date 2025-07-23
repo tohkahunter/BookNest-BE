@@ -63,19 +63,37 @@ namespace BookNest_Services.Service
             // Update dates based on status
             switch (newStatusId)
             {
+                case 1: // Want to Read
+                        // Reset progress when moving back to "Want to Read"
+                    userBook.ReadingProgress = 0.00m;
+                    userBook.CurrentPage = null;
+                    // Keep existing dates if any (don't reset StartDate/FinishDate)
+                    break;
+
                 case 2: // Currently Reading
                     if (userBook.StartDate == null)
                         userBook.StartDate = DateTime.UtcNow;
                     userBook.FinishDate = null;
+
+                    // ✅ FIX: Reset progress to 0 or keep existing progress if < 100
+                    if (userBook.ReadingProgress >= 100.00m)
+                    {
+                        userBook.ReadingProgress = 0.00m;
+                        userBook.CurrentPage = null;
+                    }
+                    // If progress < 100, keep existing progress and page
                     break;
+
                 case 3: // Read
                     if (userBook.StartDate == null)
                         userBook.StartDate = DateTime.UtcNow;
                     userBook.FinishDate = DateTime.UtcNow;
                     userBook.ReadingProgress = 100.00m;
-                    break;
-                case 1: // Want to Read
-                    // Keep existing dates if any
+                    // Set CurrentPage to PageCount if available
+                    if (userBook.Book != null && userBook.Book.PageCount.HasValue)
+                    {
+                        userBook.CurrentPage = userBook.Book.PageCount.Value;
+                    }
                     break;
             }
 
