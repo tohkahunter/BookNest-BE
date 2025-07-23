@@ -24,18 +24,13 @@ namespace BookNest_Services.Service
 
         public async Task<Review> CreateReviewAsync(int userId, int bookId, string reviewText, int rating, bool isPublic = true)
         {
-            // Validate that the book exists
-            var book = await _context.Books.FindAsync(bookId);
-            if (book == null)
-                throw new InvalidOperationException($"Book with ID {bookId} not found");
+            //// Check if user can review this book (must have it on "Read" shelf)
+            //if (!await CanUserReviewBookAsync(userId, bookId))
+            //    throw new InvalidOperationException("You can only review books that you have marked as 'Read'");
 
-            // TEMPORARILY DISABLED FOR TESTING - Check if user can review this book (must have it on "Read" shelf)
-            // if (!await CanUserReviewBookAsync(userId, bookId))
-            //     throw new InvalidOperationException("You can only review books that you have marked as 'Read'");
-
-            // Check if user has already reviewed this book
-            if (await HasUserReviewedBookAsync(userId, bookId))
-                throw new InvalidOperationException("You have already reviewed this book");
+            //// Check if user has already reviewed this book
+            //if (await HasUserReviewedBookAsync(userId, bookId))
+            //    throw new InvalidOperationException("You have already reviewed this book");
 
             var review = new Review
             {
@@ -74,8 +69,6 @@ namespace BookNest_Services.Service
             review.Rating = rating;
             review.IsPublic = isPublic;
 
-            // Mark entity as modified and save changes
-            _context.Reviews.Update(review);
             await _context.SaveChangesAsync();
 
             // Load navigation properties
@@ -296,8 +289,6 @@ namespace BookNest_Services.Service
             comment.IsEdited = true;
             comment.EditedAt = DateTime.UtcNow;
 
-            // Mark entity as modified and save changes
-            _context.Comments.Update(comment);
             await _context.SaveChangesAsync();
 
             // Load navigation properties
