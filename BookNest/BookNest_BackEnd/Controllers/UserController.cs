@@ -59,7 +59,7 @@ namespace BookNest_BackEnd.Controllers
             return Ok(new { message = "User profile updated successfully" });
         }
 
-        [Authorize(Roles = "3")]
+        [Authorize(Roles = "3,2")]
         [HttpPut("{id}/password")]
         public async Task<IActionResult> UpdateUserPassword(int id, [FromBody] string newPassword)
         {

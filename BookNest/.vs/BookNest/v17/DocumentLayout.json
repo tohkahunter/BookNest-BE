@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|solutionrelative:booknest_backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_backend\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8630B2D-2D4C-4838-AC78-4AABBE33E879}|BookNest_BackEnd\\BookNest_BackEnd.csproj|solutionrelative:booknest_backend\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|c:\\users\\admin\\documents\\github\\booknest-be\\booknest\\booknest_repositories\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D0F2D6-D7DC-8EEF-E4D7-270007E5B054}|BookNest_Repositories\\BookNest_Repositories.csproj|solutionrelative:booknest_repositories\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -62,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 376,
-          "SelectedChildIndex": 38,
+          "SelectedChildIndex": 39,
           "Children": [
             {
               "$type": "Bookmark",
@@ -178,7 +182,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\ReviewController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "BookNest_BackEnd\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAAOMBAAAAAAAAAAAkwN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T10:29:39.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Interface\\IUserService.cs",
               "RelativeDocumentMoniker": "BookNest_Services\\Interface\\IUserService.cs",
@@ -190,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Models\\User.cs",
               "RelativeDocumentMoniker": "BookNest_Repositories\\Models\\User.cs",
@@ -198,12 +215,11 @@
               "RelativeToolTip": "BookNest_Repositories\\Models\\User.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAA2wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T11:02:02.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T11:02:02.505Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\appsettings.json",
               "RelativeDocumentMoniker": "BookNest_BackEnd\\appsettings.json",
@@ -215,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Program.cs",
               "RelativeDocumentMoniker": "BookNest_BackEnd\\Program.cs",
@@ -227,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Dockerfile",
               "RelativeDocumentMoniker": "BookNest_BackEnd\\Dockerfile",
@@ -239,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Models\\Book.cs",
               "RelativeDocumentMoniker": "BookNest_Repositories\\Models\\Book.cs",
@@ -251,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Service\\UserService.cs",
               "RelativeDocumentMoniker": "BookNest_Services\\Service\\UserService.cs",
@@ -263,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GenreController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\GenreController.cs",
               "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\GenreController.cs",
@@ -275,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BookService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Services\\Service\\BookService.cs",
               "RelativeDocumentMoniker": "BookNest_Services\\Service\\BookService.cs",
@@ -287,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BookController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\BookController.cs",
               "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\BookController.cs",
@@ -305,14 +321,14 @@
               "RelativeDocumentMoniker": "BookNest_BackEnd\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_BackEnd\\Controllers\\UserController.cs",
               "RelativeToolTip": "BookNest_BackEnd\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAjwDQAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAnwD0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T05:10:50.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "BookNest_Repositories\\Interface\\IGenericRepository.cs",
@@ -324,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "IBookRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BookNest-BE\\BookNest\\BookNest_Repositories\\Interface\\IBookRepository.cs",
               "RelativeDocumentMoniker": "BookNest_Repositories\\Interface\\IBookRepository.cs",
